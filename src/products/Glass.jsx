@@ -6,19 +6,70 @@ import { productState } from "../atoms/temps";
 import { useRecoilState } from "recoil";
 
 
-
-export function Shoea(props) {
-    const { scene } = useGLTF("product/shoes1.glb");
+export function Glassa(props) {
+    const { scene } = useGLTF("product/glass1.glb");
     const [selected, setSelected] = useState(false);
 
-    const name = "shoes1"
+    const name = "glass1"
     const [productname, setProductname] = useRecoilState(productState);
     console.log(productname);
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
-        position: selected ? [0, 0, 0.6] : [1.5, 0.34, -1.4],
-        scale: selected ? 0.9 : 0.3,
+        position: selected ? [0, -1, 0.6] : [1.5, -1.2, -1.1],
+        scale: selected ? 0.008 : 0.003,
+        rotation : [0, 0, 0]
+    });
+    const rotationSpeed = 0.01;
+
+    const rotateModel = (obj) => {
+        obj.rotation.y += rotationSpeed;
+    };
+
+    // Utilisation de useFrame pour mettre à jour la rotation
+    useFrame(() => {
+        if (selected) {
+            rotateModel(scene);
+        }
+    });
+
+    useEffect(() => {
+        if (productname===name) {
+            if (!selected) {
+                setSelected(false)
+            }
+            
+        } else {
+            setSelected(false)
+        }
+    })
+    return (
+        <>
+            <a.primitive
+                position={position}
+                scale={scale}
+                rotation={rotation}
+                object={scene}
+                {...props}
+                onClick={() => {setSelected(!selected); setProductname(name)} }
+            />
+        </>
+    );
+}
+
+
+export function Glassb(props) {
+    const { scene } = useGLTF("product/glass2.glb");
+    const [selected, setSelected] = useState(false);
+
+    const name = "glass2"
+    const [productname, setProductname] = useRecoilState(productState);
+    console.log(productname);
+
+    // Utilisation de useSpring pour animer la position
+    const { position, scale, rotation } = useSpring({
+        position: selected ? [0, -0.5, 0.6] : [0, -1.2, -1.1],
+        scale: selected ? 1 : 0.35,
         rotation : [0, 0, 0]
     });
     const rotationSpeed = 0.01;
@@ -41,7 +92,6 @@ export function Shoea(props) {
             setSelected(false)
         }
     })
-
     return (
         <>
             <a.primitive
@@ -56,25 +106,19 @@ export function Shoea(props) {
     );
 }
 
-
-
-
-
-
-
-export function Shoeb(props) {
-    const { scene } = useGLTF("product/shoes2.glb");
+export function Glassc(props) {
+    const { scene } = useGLTF("product/glass3.glb");
     const [selected, setSelected] = useState(false);
 
-    const name = "shoes2"
+    const name = "glass3"
     const [productname, setProductname] = useRecoilState(productState);
     console.log(productname);
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
-        position: selected ? [0, -0.7, 0.6] : [-1.4, 0.15, -1.4],
-        scale: selected ? 0.09 : 0.022,
-        rotation : [0, -Math.PI/2, 0]
+        position: selected ? [0, -0.5, 0.6] : [1.5, -0.5, -1.2],
+        scale: selected ? 1 : 0.35,
+        rotation : [0, 0, 0]
     });
     const rotationSpeed = 0.01;
 
@@ -96,7 +140,6 @@ export function Shoeb(props) {
             setSelected(false)
         }
     })
-
     return (
         <>
             <a.primitive
@@ -111,20 +154,19 @@ export function Shoeb(props) {
     );
 }
 
-
-export function Shoec(props) {
-    const { scene } = useGLTF("product/shoes3.glb");
+export function Glassd(props) {
+    const { scene } = useGLTF("product/glass4.glb");
     const [selected, setSelected] = useState(false);
 
-    const name = "shoes3"
+    const name = "glass4"
     const [productname, setProductname] = useRecoilState(productState);
     console.log(productname);
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
-        position: selected ? [0, -0.7, 0.6] : [0, 0.15, -1.4],
-        scale: selected ? 0.009 : 0.0022,
-        rotation : [0, -Math.PI/4, 0]
+        position: selected ? [0, -0.5, 0.6] : [-1.5, -0.5, -1.2],
+        scale: selected ? 1 : 0.35,
+        rotation : [0, -Math.PI, 0]
     });
     const rotationSpeed = 0.01;
 
@@ -146,7 +188,55 @@ export function Shoec(props) {
             setSelected(false)
         }
     })
+    return (
+        <>
+            <a.primitive
+                position={position}
+                scale={scale}
+                rotation={rotation}
+                object={scene}
+                {...props}
+                onClick={() => {setSelected(!selected); setProductname(name)} }
+            />
+        </>
+    );
+}
 
+
+export function Glasse(props) {
+    const { scene } = useGLTF("product/glass5.glb");
+    const [selected, setSelected] = useState(false);
+
+    const name = "glass5"
+    const [productname, setProductname] = useRecoilState(productState);
+    console.log(productname);
+
+    // Utilisation de useSpring pour animer la position
+    const { position, scale, rotation } = useSpring({
+        position: selected ? [0, -1, 0.6] : [-1.5, -1.2, -1.1],
+        scale: selected ? 2.3 : 0.9,
+        rotation : [0, -Math.PI, 0]
+    });
+    const rotationSpeed = 0.01;
+
+    const rotateModel = (obj) => {
+        obj.rotation.y += rotationSpeed;
+    };
+
+    // Utilisation de useFrame pour mettre à jour la rotation
+    useFrame(() => {
+        if (selected) {
+            rotateModel(scene);
+        }
+    });
+
+    useEffect(() => {
+        if (productname===name) {
+            
+        } else {
+            setSelected(false)
+        }
+    })
     return (
         <>
             <a.primitive
@@ -163,51 +253,3 @@ export function Shoec(props) {
 
 
 
-// export function Shoed(props) {
-//     const { scene } = useGLTF("product/shoes4.glb");
-//     const [selected, setSelected] = useState(false);
-
-//     const name = "shoes4"
-//     const [productname, setProductname] = useRecoilState(productState);
-//     console.log(productname);
-
-//     // Utilisation de useSpring pour animer la position
-//     const { position, scale, rotation } = useSpring({
-//         position: selected ? [0, -0.7, 0.6] : [0, -0.5, -1.75],
-//         scale: selected ? 0.0000009 : 0.0000005,
-//         rotation : [0, Math.PI/2, 0]
-//     });
-//     const rotationSpeed = 0.01;
-
-//     const rotateModel = (obj) => {
-//         obj.rotation.y += rotationSpeed;
-//     };
-
-//     // Utilisation de useFrame pour mettre à jour la rotation
-//     useFrame(() => {
-//         if (selected) {
-//             rotateModel(scene);
-//         }
-//     });
-
-//     useEffect(() => {
-//         if (productname===name) {
-            
-//         } else {
-//             setSelected(false)
-//         }
-//     })
-
-//     return (
-//         <>
-//             <a.primitive
-//                 position={position}
-//                 scale={scale}
-//                 rotation={rotation}
-//                 object={scene}
-//                 {...props}
-//                 onClick={() => {setSelected(!selected); setProductname(name)} }
-//             />
-//         </>
-//     );
-// }

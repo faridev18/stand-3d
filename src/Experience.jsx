@@ -6,7 +6,10 @@ import { Ceilinglight } from './components/Ceilinglight'
 // import { Model } from './components/Holiday'
 import * as THREE from "three";
 import Light from './components/Light'
-import { Shoea, Shoeb } from './products/Shoea'
+import { Shoea, Shoeb, Shoec, } from './products/Shoea'
+import { Headseta, Headsetb, Headsetc, Headsetd } from './products/Headset'
+import { Glassa, Glassb, Glassc, Glassd, Glasse } from './products/Glass'
+import { Magic } from './components/Magic'
 
 export default function Experience() {
 
@@ -50,6 +53,20 @@ export default function Experience() {
 
                         <Shoea />
                         <Shoeb />
+                        <Shoec />
+
+                        <Headseta />
+                        <Headsetb />
+                        <Headsetc />
+                        <Headsetd />
+
+                        <Glassa />
+                        <Glassb />
+                        <Glassc />
+                        <Glassd />
+                        <Glasse />
+        
+                        <Magic  />
 
 
                         

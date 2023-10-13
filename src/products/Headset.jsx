@@ -7,18 +7,67 @@ import { useRecoilState } from "recoil";
 
 
 
-export function Shoea(props) {
-    const { scene } = useGLTF("product/shoes1.glb");
+export function Headseta(props) {
+    const { scene } = useGLTF("product/Headset1.glb");
     const [selected, setSelected] = useState(false);
 
-    const name = "shoes1"
+    const name = "headset1"
     const [productname, setProductname] = useRecoilState(productState);
     console.log(productname);
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
-        position: selected ? [0, 0, 0.6] : [1.5, 0.34, -1.4],
-        scale: selected ? 0.9 : 0.3,
+        position: selected ? [0, -1, 0.6] : [1.5, 0.9, -1.4],
+        scale: selected ? 0.025 : 0.007,
+        rotation : [0, Math.PI/2, 0]
+    });
+    const rotationSpeed = 0.01;
+
+    const rotateModel = (obj) => {
+        obj.rotation.y += rotationSpeed;
+    };
+
+    // Utilisation de useFrame pour mettre à jour la rotation
+    useFrame(() => {
+        if (selected) {
+            rotateModel(scene);
+        }
+    });
+
+    useEffect(() => {
+        if (productname===name) {
+            
+        } else {
+            setSelected(false)
+        }
+    })
+
+    return (
+        <>
+            <a.primitive
+                position={position}
+                scale={scale}
+                rotation={rotation}
+                object={scene}
+                {...props}
+                onClick={() => {setSelected(!selected); setProductname(name)} }
+            />
+        </>
+    );
+}
+
+export function Headsetb(props) {
+    const { scene } = useGLTF("product/Headset2.glb");
+    const [selected, setSelected] = useState(false);
+
+    const name = "headset2"
+    const [productname, setProductname] = useRecoilState(productState);
+    console.log(productname);
+
+    // Utilisation de useSpring pour animer la position
+    const { position, scale, rotation } = useSpring({
+        position: selected ? [0, -1, 0.6] : [-1.5, 0.93, -1.4],
+        scale: selected ? 13 : 4,
         rotation : [0, 0, 0]
     });
     const rotationSpeed = 0.01;
@@ -57,24 +106,19 @@ export function Shoea(props) {
 }
 
 
-
-
-
-
-
-export function Shoeb(props) {
-    const { scene } = useGLTF("product/shoes2.glb");
+export function Headsetc(props) {
+    const { scene } = useGLTF("product/Headset3.glb");
     const [selected, setSelected] = useState(false);
 
-    const name = "shoes2"
+    const name = "headset3"
     const [productname, setProductname] = useRecoilState(productState);
     console.log(productname);
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
-        position: selected ? [0, -0.7, 0.6] : [-1.4, 0.15, -1.4],
-        scale: selected ? 0.09 : 0.022,
-        rotation : [0, -Math.PI/2, 0]
+        position: selected ? [0, -1, 0.6] : [0, 1, -1.4],
+        scale: selected ? 1.5 : 0.5,
+        rotation : [0, Math.PI/2, 0]
     });
     const rotationSpeed = 0.01;
 
@@ -96,7 +140,6 @@ export function Shoeb(props) {
             setSelected(false)
         }
     })
-
     return (
         <>
             <a.primitive
@@ -111,20 +154,19 @@ export function Shoeb(props) {
     );
 }
 
-
-export function Shoec(props) {
-    const { scene } = useGLTF("product/shoes3.glb");
+export function Headsetd(props) {
+    const { scene } = useGLTF("product/Headset4.glb");
     const [selected, setSelected] = useState(false);
 
-    const name = "shoes3"
+    const name = "headset4"
     const [productname, setProductname] = useRecoilState(productState);
     console.log(productname);
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
-        position: selected ? [0, -0.7, 0.6] : [0, 0.15, -1.4],
-        scale: selected ? 0.009 : 0.0022,
-        rotation : [0, -Math.PI/4, 0]
+        position: selected ? [0, -1, 0.6] : [0, -0.4, -1.2],
+        scale: selected ? 1.5 : 0.4,
+        rotation : [0, -Math.PI, 0]
     });
     const rotationSpeed = 0.01;
 
@@ -146,7 +188,6 @@ export function Shoec(props) {
             setSelected(false)
         }
     })
-
     return (
         <>
             <a.primitive
@@ -161,53 +202,3 @@ export function Shoec(props) {
     );
 }
 
-
-
-// export function Shoed(props) {
-//     const { scene } = useGLTF("product/shoes4.glb");
-//     const [selected, setSelected] = useState(false);
-
-//     const name = "shoes4"
-//     const [productname, setProductname] = useRecoilState(productState);
-//     console.log(productname);
-
-//     // Utilisation de useSpring pour animer la position
-//     const { position, scale, rotation } = useSpring({
-//         position: selected ? [0, -0.7, 0.6] : [0, -0.5, -1.75],
-//         scale: selected ? 0.0000009 : 0.0000005,
-//         rotation : [0, Math.PI/2, 0]
-//     });
-//     const rotationSpeed = 0.01;
-
-//     const rotateModel = (obj) => {
-//         obj.rotation.y += rotationSpeed;
-//     };
-
-//     // Utilisation de useFrame pour mettre à jour la rotation
-//     useFrame(() => {
-//         if (selected) {
-//             rotateModel(scene);
-//         }
-//     });
-
-//     useEffect(() => {
-//         if (productname===name) {
-            
-//         } else {
-//             setSelected(false)
-//         }
-//     })
-
-//     return (
-//         <>
-//             <a.primitive
-//                 position={position}
-//                 scale={scale}
-//                 rotation={rotation}
-//                 object={scene}
-//                 {...props}
-//                 onClick={() => {setSelected(!selected); setProductname(name)} }
-//             />
-//         </>
-//     );
-// }
