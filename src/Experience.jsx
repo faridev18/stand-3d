@@ -1,12 +1,17 @@
-import React, { Suspense, useRef } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import { Stand } from './Stand'
 import { OrbitControls, ContactShadows, Environment, PresentationControls, useHelper, SpotLight } from '@react-three/drei'
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import { Ceilinglight } from './components/Ceilinglight'
+// import { Model } from './components/Holiday'
 import * as THREE from "three";
 import Light from './components/Light'
+import { Shoea, Shoeb } from './products/Shoea'
 
 export default function Experience() {
+
+    const [selected, setSelected] = useState(false);
+
 
 
     return (
@@ -39,6 +44,15 @@ export default function Experience() {
                         <Ceilinglight position={[-2.28, 2.3, -1.38]} scale={0.5} />
                         <Ceilinglight position={[-2.8, 2.3, -.24]} scale={0.5} />
                         <Ceilinglight position={[-3.3, 2.3, .9]} scale={0.5} />
+
+
+                        {/* product */}
+
+                        <Shoea />
+                        <Shoeb />
+
+
+                        
 
 
 

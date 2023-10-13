@@ -10,7 +10,7 @@ function App() {
         fov: 50,
         // position: [0, 7, 0]
         position: [0, 1.3, 5]
-      }}  >
+      }} >
       <Experience />
     </Canvas>
   );

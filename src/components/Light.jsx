@@ -6,7 +6,7 @@ import * as THREE from "three";
 export default function Light() {
 
     const ref = useRef();
-    const helper = useHelper(ref, THREE.PointLightHelper, 0.5, "red");
+    // const helper = useHelper(ref, THREE.PointLightHelper, 0.5, "red");
     return (
         <>
             <ambientLight intensity={1} />
