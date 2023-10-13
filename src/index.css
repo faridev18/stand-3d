@@ -70,3 +70,9 @@ body {
     visibility: hidden;
   }
 }
+
+@media screen and (max-width: 430px){
+  .loading-screen__title {
+    font-size: 3rem;
+  }
+}
