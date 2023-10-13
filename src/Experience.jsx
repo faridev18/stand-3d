@@ -10,6 +10,7 @@ import { Shoea, Shoeb, Shoec, } from './products/Shoea'
 import { Headseta, Headsetb, Headsetc, Headsetd } from './products/Headset'
 import { Glassa, Glassb, Glassc, Glassd, Glasse } from './products/Glass'
 import { Magic } from './components/Magic'
+import Loader from './Loader'
 
 export default function Experience() {
 
@@ -65,7 +66,7 @@ export default function Experience() {
                         <Glassc />
                         <Glassd />
                         <Glasse />
-        
+
                         <Magic  />
 
 
