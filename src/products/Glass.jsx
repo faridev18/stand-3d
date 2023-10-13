@@ -12,7 +12,7 @@ export function Glassa(props) {
 
     const name = "glass1"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -64,7 +64,7 @@ export function Glassb(props) {
 
     const name = "glass2"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -112,7 +112,7 @@ export function Glassc(props) {
 
     const name = "glass3"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -160,7 +160,7 @@ export function Glassd(props) {
 
     const name = "glass4"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -209,7 +209,7 @@ export function Glasse(props) {
 
     const name = "glass5"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({

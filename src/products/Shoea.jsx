@@ -13,7 +13,7 @@ export function Shoea(props) {
 
     const name = "shoes1"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -68,7 +68,7 @@ export function Shoeb(props) {
 
     const name = "shoes2"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -118,7 +118,7 @@ export function Shoec(props) {
 
     const name = "shoes3"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -169,7 +169,7 @@ export function Shoec(props) {
 
 //     const name = "shoes4"
 //     const [productname, setProductname] = useRecoilState(productState);
-//     console.log(productname);
+//     
 
 //     // Utilisation de useSpring pour animer la position
 //     const { position, scale, rotation } = useSpring({

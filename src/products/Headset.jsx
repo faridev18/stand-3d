@@ -13,7 +13,7 @@ export function Headseta(props) {
 
     const name = "headset1"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -62,7 +62,7 @@ export function Headsetb(props) {
 
     const name = "headset2"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -112,7 +112,7 @@ export function Headsetc(props) {
 
     const name = "headset3"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
@@ -160,7 +160,7 @@ export function Headsetd(props) {
 
     const name = "headset4"
     const [productname, setProductname] = useRecoilState(productState);
-    console.log(productname);
+    
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
