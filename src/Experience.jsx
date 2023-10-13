@@ -21,18 +21,26 @@ export default function Experience() {
     return (
         <>
             
-            {/* <OrbitControls /> */}
-            <color args={['#8a6803']} attach="background" />
+            <OrbitControls 
+
+            maxAzimuthAngle={0.4}
+            minAzimuthAngle={-0.5}
+             maxDistance={8}
+             minDistance={5}
+             maxPolarAngle={1.7} 
+             minPolarAngle={1.2} />
+            <color args={['#f73803']} attach="background" />
             <Environment preset="city" />
             <Suspense fallback={null}>
-                <PresentationControls
+                {/* <PresentationControls
                     global
                     rotation={[0, 0, 0]}
+                    cursor=''
                     polar={[0, 0.2]}
                     azimuth={[- 1, 0.75]}
-                    config={{ mass: 2, tension: 400 }}
+                    config={{ mass: 1, tension: 50 }}
                     // snap={{ mass: 4, tension: 100 }}
-                >
+                > */}
                     <Light/>
 
                     <Stand position={[0, -1.5, 0]} rotation={[0, Math.PI, 0]} />
@@ -76,7 +84,7 @@ export default function Experience() {
 
                     </EffectComposer>
 
-                </PresentationControls>
+                {/* </PresentationControls> */}
 
             </Suspense>
 

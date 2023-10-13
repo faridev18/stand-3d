@@ -164,8 +164,8 @@ export function Headsetd(props) {
 
     // Utilisation de useSpring pour animer la position
     const { position, scale, rotation } = useSpring({
-        position: selected ? [0, -1, 0.6] : [0, -0.4, -1.2],
-        scale: selected ? 1.5 : 0.4,
+        position: selected ? [0, -0.7, 0.6] : [0, -0.4, -1.2],
+        scale: selected ? 1.4 : 0.4,
         rotation : [0, -Math.PI, 0]
     });
     const rotationSpeed = 0.01;
